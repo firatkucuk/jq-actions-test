@@ -16,4 +16,5 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build and linting check
-      run: echo '{"data": [1, 2, 3]}' | jq
+      run: |
+        echo '{"data": [1, 2, 3]}' | jq
