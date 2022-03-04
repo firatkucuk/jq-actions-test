@@ -18,13 +18,14 @@ jobs:
     - name: Write
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SECRET: ${{ github.event.secret.html_url }}
       run: |
         echo "vada" | base64 > cert.base64
         gh secret set CERTIFICATE_BASE64 < cert.base64
 
     - name: Read
       env:
-        CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}
+        CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}        
       run: |
         echo $CERTIFICATE_BASE64 | base64 --decode > cert.der
 
