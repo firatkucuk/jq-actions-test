@@ -1,0 +1,19 @@
+name: PR Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: 'Build, Linting and Code Quality Check'
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build and linting check
+      run: echo '{"data": [1, 2, 3]}' | jq
