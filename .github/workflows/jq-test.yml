@@ -17,7 +17,7 @@ jobs:
 
     - name: Write
       run: |
-        echo "vada" | base64 > cert.bas64
+        echo "vada" | base64 > cert.base64
         gh secret set CERTIFICATE_BASE64 < cert.base64
 
     - name: Read
