@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build and linting check
+    - name: jq test
       run: |
         echo '{"data": [1, 2, 3]}' | jq
